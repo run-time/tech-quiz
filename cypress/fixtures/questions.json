@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "1",
+    "question": "What is React?",
+    "answers": [
+      { "text": "A JavaScript library for building user interfaces", "isCorrect": true },
+      { "text": "A programming language", "isCorrect": false },
+      { "text": "A database system", "isCorrect": false },
+      { "text": "A server-side framework", "isCorrect": false }
+    ]
+  },
+  {
+    "_id": "2",
+    "question": "What is TypeScript?",
+    "answers": [
+      { "text": "A statically typed superset of JavaScript", "isCorrect": true },
+      { "text": "A database system", "isCorrect": false },
+      { "text": "A CSS framework", "isCorrect": false },
+      { "text": "A testing framework", "isCorrect": false }
+    ]
+  },
+  {
+    "_id": "3",
+    "question": "What is Node.js?",
+    "answers": [
+      { "text": "A JavaScript runtime environment", "isCorrect": true },
+      { "text": "A database system", "isCorrect": false },
+      { "text": "A front-end framework", "isCorrect": false },
+      { "text": "A programming language", "isCorrect": false }
+    ]
+  },
+  {
+    "_id": "4",
+    "question": "What is MongoDB?",
+    "answers": [
+      { "text": "A NoSQL database", "isCorrect": true },
+      { "text": "A SQL database", "isCorrect": false },
+      { "text": "A front-end framework", "isCorrect": false },
+      { "text": "A back-end framework", "isCorrect": false }
+    ]
+  },
+  {
+    "_id": "5",
+    "question": "What is Express.js?",
+    "answers": [
+      { "text": "A web application framework for Node.js", "isCorrect": true },
+      { "text": "A database system", "isCorrect": false },
+      { "text": "A front-end framework", "isCorrect": false },
+      { "text": "A programming language", "isCorrect": false }
+    ]
+  },
+  {
+    "_id": "6",
+    "question": "What is Vite?",
+    "answers": [
+      { "text": "A build tool for frontend development", "isCorrect": true },
+      { "text": "A database system", "isCorrect": false },
+      { "text": "A back-end framework", "isCorrect": false },
+      { "text": "A CSS framework", "isCorrect": false }
+    ]
+  },
+  {
+    "_id": "7",
+    "question": "What is Redux?",
+    "answers": [
+      { "text": "A state management library", "isCorrect": true },
+      { "text": "A database system", "isCorrect": false },
+      { "text": "A back-end framework", "isCorrect": false },
+      { "text": "A routing library", "isCorrect": false }
+    ]
+  },
+  {
+    "_id": "8",
+    "question": "What is GraphQL?",
+    "answers": [
+      { "text": "A query language for APIs", "isCorrect": true },
+      { "text": "A database system", "isCorrect": false },
+      { "text": "A front-end framework", "isCorrect": false },
+      { "text": "A back-end framework", "isCorrect": false }
+    ]
+  },
+  {
+    "_id": "9",
+    "question": "What is Jest?",
+    "answers": [
+      { "text": "A JavaScript testing framework", "isCorrect": true },
+      { "text": "A build tool", "isCorrect": false },
+      { "text": "A state management library", "isCorrect": false },
+      { "text": "A CSS framework", "isCorrect": false }
+    ]
+  },
+  {
+    "_id": "10",
+    "question": "What is Docker?",
+    "answers": [
+      { "text": "A platform for developing, shipping, and running applications in containers", "isCorrect": true },
+      { "text": "A database system", "isCorrect": false },
+      { "text": "A front-end framework", "isCorrect": false },
+      { "text": "A programming language", "isCorrect": false }
+    ]
+  }
+]
