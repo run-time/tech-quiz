@@ -2,6 +2,7 @@ import http from 'http';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import express from 'express';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -110,86 +111,19 @@ const mockQuestions = [
   }
 ];
 
-const server = http.createServer(async (req, res) => {
-  const url = req.url;
-  const method = req.method;
-
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-  // Handle preflight requests
-  if (method === 'OPTIONS') {
-    res.statusCode = 204;
-    res.end();
-    return;
-  }
-
-  if (url === '/api/questions/random' && method === 'GET') {
-    // Return mock questions
-    res.setHeader('Content-Type', 'application/json');
-    res.statusCode = 200;
-    res.end(JSON.stringify(mockQuestions));
-    return;
-  }
-
-  // Static file serving
-  try {
-    let filePath;
-    
-    if (url === '/' || url === '/index.html') {
-      filePath = path.join(__dirname, 'client', 'dist', 'index.html');
-    } else {
-      filePath = path.join(__dirname, 'client', 'dist', url);
-    }
-
-    const stat = await fs.stat(filePath).catch(() => null);
-    
-    if (stat && stat.isFile()) {
-      const content = await fs.readFile(filePath);
-      
-      // Set content type
-      const ext = path.extname(filePath);
-      let contentType = 'text/html';
-      
-      switch (ext) {
-        case '.js':
-          contentType = 'text/javascript';
-          break;
-        case '.css':
-          contentType = 'text/css';
-          break;
-        case '.json':
-          contentType = 'application/json';
-          break;
-        case '.png':
-          contentType = 'image/png';
-          break;
-        case '.jpg':
-          contentType = 'image/jpg';
-          break;
-        case '.svg':
-          contentType = 'image/svg+xml';
-          break;
-      }
-      
-      res.setHeader('Content-Type', contentType);
-      res.statusCode = 200;
-      res.end(content);
-      return;
-    }
-  } catch (err) {
-    console.error(`Error reading file: ${err}`);
-  }
-
-  // If not found, return a 404
-  res.statusCode = 404;
-  res.end('Not found');
-});
-
+const app = express();
 const PORT = 3001;
 
-server.listen(PORT, () => {
+// Define a route for the root URL
+app.get('/', (req, res) => {
+  res.status(200).send('Mock server is running');
+});
+
+// Define other routes as needed
+app.get('/api', (req, res) => {
+  res.status(200).json({ message: 'API is working' });
+});
+
+app.listen(PORT, () => {
   console.log(`Mock Server running at http://localhost:${PORT}`);
 });

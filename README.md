@@ -26,17 +26,30 @@ A full-stack MERN application (MongoDB, Express.js, React, Node.js) which allows
    ```
    npm install
    ```
-3. Create a `.env` file in the server directory based on `.env.example`
-4. Seed the database
+3. Install and startup MongoDB
+   ```
+   brew tap mongodb/brew
+   brew install mongodb-community@6.0
+   brew services start mongodb/brew/mongodb-community@6.0
+   ```
+4. Create a `.env` file in the server directory based on `.env.example`
+5. With MongoDB running seed the database
    ```
    npm run seed
    ```
-5. Start the development server:
+6. Start the development server
    ```
    npm run start:dev
    ```
 
 ## Running Tests
+
+Pre-requisite: Make sure this is installed...
+```
+npm install start-server-and-test --save-dev
+npm install express
+
+```
 
 #### Run both component and end-to-end tests:
 ```
@@ -60,22 +73,25 @@ npm run cypress:open
 ### Cypress Component Tests
 
 Component tests validate individual React components in isolation. Our tests for the Quiz component verify:
-
-- ✅ Initial state with the start button displayed
-- ✅ Quiz start functionality when the start button is clicked
-- ✅ Question progression when answers are selected
-- ✅ Score display at the end of the quiz
-- ✅ Ability to start a new quiz after completion
+```
+✓ displays the start button initially (44ms)
+✓ starts the quiz when the start button is clicked (100ms)
+✓ displays the next question when an answer is clicked (168ms)
+✓ displays the score at the end of the quiz (243ms)
+✓ allows starting a new quiz after completion (323ms)
+```
 
 ### Cypress End-to-End Tests
 
 E2E tests validate the complete application flow from a user's perspective:
 
-- ✅ Application loading with the start button displayed
-- ✅ Starting the quiz and presenting questions
-- ✅ Question progression when answers are selected
-- ✅ Quiz completion and score display
-- ✅ Starting a new quiz after completion
+```
+✓ displays the start button initially (44ms)
+✓ starts the quiz when the start button is clicked (100ms)
+✓ displays the next question when an answer is clicked (168ms)
+✓ displays the score at the end of the quiz (243ms)
+✓ allows starting a new quiz after completion (323ms)
+```
 
 ## Project Structure
 
